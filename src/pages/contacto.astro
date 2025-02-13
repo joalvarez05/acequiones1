@@ -1,65 +1,14 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-
+import Layout from "../layouts/Layout.astro";
+import Container from "@/components/shared/Container.astro";
+import Formulario from "@/components/formulario/Formulario.jsx";
 const title = "Contacto";
 ---
 
 <Layout title={title}>
-  <section class="max-w-4xl mx-auto py-40 px-4">
-    <h1 class="text-3xl font-semibold mb-6 text-heading-1">Contáctanos</h1>
-    <p class="text-lg text-heading-2 mb-6">
-      Si tienes alguna pregunta o consulta, no dudes en ponerte en contacto con
-      nosotros. Estaremos encantados de ayudarte.
-    </p>
-    <form
-      action="#"
-      method="POST"
-      class="grid grid-cols-1 md:grid-cols-2 gap-6"
-    >
-      <div>
-        <label for="name" class="block text-sm font-medium text-heading-2">
-          Nombre
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          class="mt-2 w-full px-4 py-2 border border-box-sd rounded-md"
-        />
-      </div>
-      <div>
-        <label for="email" class="block text-sm font-medium text-heading-2">
-          Correo Electrónico
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          class="mt-2 w-full px-4 py-2 border border-box-sd rounded-md"
-        />
-      </div>
-      <div class="col-span-2">
-        <label for="message" class="block text-sm font-medium text-heading-2">
-          Mensaje
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows="4"
-          required
-          class="mt-2 w-full px-4 py-2 border border-box-sd rounded-md"
-        ></textarea>
-      </div>
-      <div class="col-span-2">
-        <button
-          type="submit"
-          class="px-6 py-3 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition duration-300"
-        >
-          Enviar
-        </button>
-      </div>
-    </form>
-  </section>
+  <Container>
+    <Formulario client:load />
+  </Container>
 </Layout>
+
+
