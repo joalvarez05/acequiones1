@@ -156,13 +156,16 @@ const navItems = [
       if (data && data.main && data.weather && data.weather[0]) {
         const temperatura = (data.main.temp_max - 273.15).toFixed(0);
         const icono = data.weather[0].icon;
+        const iconUrl = `https://openweathermap.org/img/wn/${icono}@4x.png`;
 
+        // Guardar datos en localStorage
         localStorage.setItem("temperatura", temperatura);
+        localStorage.setItem("iconUrl", iconUrl);
         localStorage.setItem("lastUpdate", new Date().getTime().toString());
 
+        // Actualizar la interfaz
         document.getElementById("temperature").textContent = `${temperatura}°C`;
-        document.getElementById("weather-icon").src =
-          `https://openweathermap.org/img/wn/${icono}@4x.png`;
+        document.getElementById("weather-icon").src = iconUrl;
       } else {
         console.log("Datos no encontrados en la respuesta:", data);
       }
@@ -175,9 +178,15 @@ const navItems = [
     if (isTimeToUpdate()) {
       fetchWeatherData();
     } else {
+      // Recuperar datos del localStorage
       const temperatura = localStorage.getItem("temperatura");
+      const iconUrl = localStorage.getItem("iconUrl");
+
+      // Actualizar la interfaz
       document.getElementById("temperature").textContent = `${temperatura}°C`;
+      document.getElementById("weather-icon").src = iconUrl;
     }
   }
+
   loadWeatherData();
 </script>
