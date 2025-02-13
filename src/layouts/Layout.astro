@@ -7,19 +7,35 @@ export interface Props {
 }
 
 const { title } = Astro.props;
+const description =
+  "Ponte en contacto con Acequiones para cualquier consulta sobre la exportación y procesamiento de limones frescos de alta calidad. Estamos aquí para ayudarte!";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="author" content="Alvarez Domínguez José Agustín" />
+    <link rel="canonical" href="https://acequiones.vercel.app/" />
     <meta
-      name="description"
-      content="AgenceX - SEO Agency website landing page made with ASTROJS and TAILWINDCSS"
+      name="keywords"
+      content="Acequiones, limones frescos, exportación de limones, comercio internacional de limones, limones premium, proveedor de limones, limones Argentina,limones EEUU,limones Rusia, venta de limones, limones de calidad, exportación de frutas, comercio global de limones"
     />
+    <meta name="description" content={description} />
+    <meta property="og:title" content="Acequiones - Exportación de Limones" />
+    <meta
+      property="og:description"
+      content="Producimos y exportamos los mejores limones. Conoce más sobre Acequiones."
+    />
+    <meta
+      property="og:image"
+      content="https://acequiones.vercel.app/logos/logo-blanco.svg"
+    />
+    <meta property="og:url" content="https://acequiones.vercel.app/" />
+    <link rel="icon" type="image/svg+xml" href="/logo-blanco.svg" />
+    <meta name="generator" content={Astro.generator} />
+
     <title>Acequiones SRL · {title}</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"

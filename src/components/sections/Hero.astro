@@ -27,13 +27,12 @@ const texts = ["Hola, Astro!", "Sin dependencias!", "Muy ligero!"];
         class="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-heading-1 leading-tight
       text-gray-900 dark:text-gray-100"
       >
-        Acequiones
+        Exportación de Limones Frescos
 
         <span
-          class="block text-transparent bg-clip-text bg-gradient-to-br from-[#F1E742] via-[#FFD500] to-[#00ae4d]"
-          id="typewriter"
+          class="block pt-2 text-transparent bg-clip-text bg-gradient-to-br from-[#beb838] via-[#d8d500] to-[#00ae4d]"
         >
-          Lemon's
+          Acequiones
         </span>
       </h1>
 
@@ -49,7 +48,7 @@ const texts = ["Hola, Astro!", "Sin dependencias!", "Muy ligero!"];
     >
       <img
         src="./images/lemon-card.webp"
-        alt="Hero image"
+        alt="lemon packing"
         width="1250"
         height="1250"
         class="lg:absolute lg:w-full lg:h-full rounded-3xl object-cover lg:max-h-none max-h-96"
@@ -59,38 +58,3 @@ const texts = ["Hola, Astro!", "Sin dependencias!", "Muy ligero!"];
 
   <ByNumber />
 </section>
-
-<!-- <script>
-  const texts = ["Lemon's"];
-  let index = 0;
-  let charIndex = 0;
-  let currentText = "";
-  const speed = 100; // Velocidad de escritura
-  const eraseSpeed = 50; // Velocidad de borrado
-  const delay = 1500; // Tiempo antes de borrar
-
-  function escribir() {
-    if (charIndex < texts[index].length) {
-      currentText += texts[index][charIndex];
-      document.getElementById("typewriter").innerText = currentText;
-      charIndex++;
-      setTimeout(escribir, speed);
-    } else {
-      setTimeout(borrar, delay);
-    }
-  }
-
-  function borrar() {
-    if (charIndex > 0) {
-      currentText = currentText.slice(0, -1);
-      document.getElementById("typewriter").innerText = currentText;
-      charIndex--;
-      setTimeout(borrar, eraseSpeed);
-    } else {
-      index = (index + 1) % texts.length;
-      setTimeout(escribir, 700);
-    }
-  }
-
-  escribir();
-</script> -->
