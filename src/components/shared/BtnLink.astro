@@ -1,0 +1,70 @@
+---
+export interface Props {
+  href: string;
+  text: string;
+  className?: string;
+  variant: "primary" | "secondary";
+}
+
+const { href, text, className, variant } = Astro.props;
+
+const getThemeStyle = (variant: "primary" | "secondary") => {
+  if (variant === "primary") {
+    return "bg-[var(--verde-lima)] border-transparent relative  hover:border-[#172554]";
+  }
+  return "text-white";
+};
+
+const getTextColor = (variant: "primary" | "secondary") => {
+  if (variant === "primary") {
+    return "text-black";
+  }
+  return "text-white";
+};
+---
+
+<a
+  href={href}
+  class={`px-6 py-3 rounded-full outline-none relative overflow-hidden border duration-300 ease-linear
+                    after:absolute after:inset-x-0 after:aspect-square after:scale-0 after:opacity-70 after:origin-center after:duration-300 after:ease-linear after:rounded-full after:top-0 after:left-0 after:bg-[#c4bf52]
+                    ${getThemeStyle(variant)} hover:after:opacity-100 hover:after:scale-[2.5] ${className}`}
+>
+  <span class={`relative ${getTextColor(variant)} z-10`}>
+    {text}
+  </span>
+</a>
+
+<style>
+  :root {
+    --verde-lima: #f1e742;
+    --verde-oscuro: #00ae4d;
+    --amarillo-limon: #ffd500;
+    --blanco: #ffffff;
+    --gris-claro: #e5e5e5;
+    --lavanda: #e6e6fa;
+  }
+  .amarillo-limon {
+    color: #ffd500;
+    transition-duration: 0.2s;
+  }
+
+  .amarillo-limon:hover {
+    color: #ffff00 !important;
+  }
+
+  .verde-lima {
+    color: #a8e06a;
+    transition-duration: 0.2s;
+  }
+
+  .verde-lima:hover {
+    color: #94d648;
+  }
+
+  .verde-oscuro {
+    color: #00ae4d;
+  }
+  .lavanda {
+    color: var(--lavanda);
+  }
+</style>
