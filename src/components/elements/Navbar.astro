@@ -23,13 +23,14 @@ const navItems = [
           <div class="relative w-16 h-16 overflow-hidden flex rounded-xl">
             <img
               src="/logo-negro.svg"
-              alt="logo de acequiones srl"
+              alt="acequiones"
+              title="Ir al inicio de acequiones"
               class="w-24 dark:hidden"
             />
 
             <img
               src="/logo-blanco.svg"
-              alt="logo de acequiones srl"
+              alt="acequiones"
               class="w-24 hidden dark:block"
             />
           </div>
@@ -57,17 +58,6 @@ const navItems = [
             })
           }
         </ul>
-
-        <div
-          class="lg:min-w-max flex items-center sm:w-max w-full pb-6 lg:pb-0 border-b border-box-bg lg:border-0 px-6 lg:px-0"
-        >
-          <BtnLink
-            text="Contactanos"
-            href="/contacto"
-            className="flex justify-center w-full sm:w-max "
-            variant="primary"
-          />
-        </div>
       </div>
       <div class="min-w-max flex items-center gap-x-3">
         <button
@@ -75,7 +65,6 @@ const navItems = [
           class="outline-none flex relative text-heading-2 rounded-full p-2 lg:p-3 border border-box-border"
         >
           <svg
-            xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
@@ -89,7 +78,6 @@ const navItems = [
             ></path>
           </svg>
           <svg
-            xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
@@ -128,4 +116,68 @@ const navItems = [
       </div>
     </nav>
   </Container>
+  <Container>
+    <div class="flex items-center gap-2 mx-2">
+      <p
+        class="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-white"
+      >
+        °T en Lules:
+      </p>
+      <div class="flex items-center">
+        <img id="weather-icon" src="" alt="Icono del clima" class="w-12 h-12" />
+        <span id="temperature" class="ml-2 text-lg text-white"></span>
+      </div>
+    </div>
+  </Container>
 </header>
+
+<script>
+  const lat = -26.930388;
+  const lon = -65.3566999;
+  const apiKey = "abc60c9a37a958c18db45e5cec532e82";
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+
+  function isTimeToUpdate() {
+    const lastUpdate = localStorage.getItem("lastUpdate");
+    if (!lastUpdate) return true;
+
+    const currentTime = new Date().getTime();
+    const timeDiff = currentTime - lastUpdate;
+    const fiveMinutesInMs = 5 * 60 * 1000;
+
+    return timeDiff >= fiveMinutesInMs;
+  }
+
+  async function fetchWeatherData() {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data && data.main && data.weather && data.weather[0]) {
+        const temperatura = (data.main.temp_max - 273.15).toFixed(0);
+        const icono = data.weather[0].icon;
+
+        localStorage.setItem("temperatura", temperatura);
+        localStorage.setItem("lastUpdate", new Date().getTime().toString());
+
+        document.getElementById("temperature").textContent = `${temperatura}°C`;
+        document.getElementById("weather-icon").src =
+          `https://openweathermap.org/img/wn/${icono}@4x.png`;
+      } else {
+        console.log("Datos no encontrados en la respuesta:", data);
+      }
+    } catch (error) {
+      console.log("Error fetching data:", error);
+    }
+  }
+
+  function loadWeatherData() {
+    if (isTimeToUpdate()) {
+      fetchWeatherData();
+    } else {
+      const temperatura = localStorage.getItem("temperatura");
+      document.getElementById("temperature").textContent = `${temperatura}°C`;
+    }
+  }
+  loadWeatherData();
+</script>
