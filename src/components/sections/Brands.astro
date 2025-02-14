@@ -1,124 +1,68 @@
 ---
 import Container from "../shared/Container.astro";
-import Title from "../shared/Title.astro";
+import Fade from "@/components/fadeUp/Fade.astro";
 ---
 
 <section>
-  <Container className="space-y-8">
-    <div class="text-center max-w-3xl mx-auto">
-      <h2 class="text-heading-1 font-semibold text-2xl sm:text-3xl md:text-4xl">
-        Empresas que confian en nosotros
-      </h2>
-    </div>
-    <div class="flex justify-center flex-wrap gap-4">
-      <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-        <img
-          src="/logos/spotify.png"
-          width="100"
-          height="60"
-          alt="spotify"
-          class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105"
-        />
+  <Fade>
+    <Container className="space-y-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2
+          class="text-heading-1 font-semibold text-2xl sm:text-3xl md:text-4xl"
+        >
+          Certificaciones que respaldan nuestra experiencia
+        </h2>
       </div>
-      <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-        <img
-          src="/logos/slack.png"
-          width="100"
-          height="60"
-          alt="slack"
-          class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105"
-        />
+      <div class="flex justify-center flex-wrap gap-4">
+        <div
+          class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group"
+        >
+          <a href="https://es.fairtradecertified.org/" target="_blank">
+            <img
+              src="/logos/fairtrade.png"
+              width="200"
+              height="120"
+              loading="lazy"
+              title="certificacion fairtrade"
+              alt="fairtrade certification"
+              class="w-20 sm:w-20 h-auto bg-white rounded-lg ease-linear duration-300 group-hover:scale-105"
+            />
+          </a>
+        </div>
+        <div
+          class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group"
+        >
+          <a href="https://www.globalgap.org/" target="_blank">
+            <img
+              src="/logos/gap.png"
+              width="200"
+              height="120"
+              loading="lazy"
+              title="certificacion global gap"
+              alt="global gap certification"
+              class="h-24 sm:h-24 w-auto ease-linear duration-300 group-hover:scale-105"
+            />
+          </a>
+        </div>
+        <div
+          class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group"
+        >
+          <a
+            href="https://www.sedex.com/es/soluciones/smeta-auditoria/"
+            target="_blank"
+          >
+            <img
+              src="/logos/smeta.png"
+              width="200"
+              height="120"
+              loading="lazy"
+              title="certificacion smeta"
+              alt="smeta certification"
+              class="h-24 sm:h-24 w-auto ease-linear duration-300 group-hover:scale-105"
+            />
+          </a>
+        </div>
       </div>
-      <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-        <img
-          src="/logos/paypallogo.png"
-          width="100"
-          height="60"
-          alt="paypal"
-          class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105"
-        />
-      </div>
-      <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-        <img
-          src="/logos/spotify.png"
-          width="100"
-          height="60"
-          alt="spotify"
-          class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105"
-        />
-      </div>
-      <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-        <img
-          src="/logos/slack.png"
-          width="100"
-          height="60"
-          alt="slack"
-          class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105"
-        />
-      </div>
-      <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-        <img
-          src="/logos/paypallogo.png"
-          width="100"
-          height="60"
-          alt="paypal"
-          class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105"
-        />
-      </div>
-      <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-        <img
-          src="/logos/spotify.png"
-          width="100"
-          height="60"
-          alt="spotify"
-          class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105"
-        />
-      </div>
-      <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-        <img
-          src="/logos/slack.png"
-          width="100"
-          height="60"
-          alt="slack"
-          class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105"
-        />
-      </div>
-      <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-        <img
-          src="/logos/paypallogo.png"
-          width="100"
-          height="60"
-          alt="paypal"
-          class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105"
-        />
-      </div>
-      <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-        <img
-          src="/logos/spotify.png"
-          width="100"
-          height="60"
-          alt="spotify"
-          class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105"
-        />
-      </div>
-      <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-        <img
-          src="/logos/slack.png"
-          width="100"
-          height="60"
-          alt="slack"
-          class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105"
-        />
-      </div>
-      <div class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group">
-        <img
-          src="/logos/paypallogo.png"
-          width="100"
-          height="60"
-          alt="paypal"
-          class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105"
-        />
-      </div>
-    </div>
-  </Container>
+    </Container>
+  </Fade>
 </section>

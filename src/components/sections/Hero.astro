@@ -1,8 +1,8 @@
 ---
 import Button from "../shared/Button.astro";
 import Container from "../shared/Container.astro";
-import Paragraph from "../shared/Paragraph.astro";
 import ByNumber from "./ByNumber.astro";
+
 ---
 
 <section class="relative pt-32 lg:pt-36">
@@ -49,8 +49,9 @@ import ByNumber from "./ByNumber.astro";
       <img
         src="./images/lemon-card.webp"
         alt="lemon packing"
-        width="1250"
-        height="1250"
+        width="800"
+        height="800"
+        fetchpriority="high"
         class="lg:absolute lg:w-full lg:h-full rounded-3xl object-cover lg:max-h-none max-h-96"
       />
     </div>

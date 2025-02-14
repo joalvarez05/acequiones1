@@ -1,4 +1,5 @@
 ---
+import Fade from "../fadeUp/Fade.astro";
 import Button from "../shared/Button.astro";
 import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
@@ -37,23 +38,29 @@ import Paragraph from "../shared/Paragraph.astro";
         </div>
       </div>
       <div class="mx-auto text-center max-w-xl md:max-w-2xl relative">
-        <h1
-          class="text-3xl/tight sm:text-4xl/tight md:text-5xl/tight
+        <Fade>
+          <h1
+            class="text-3xl/tight sm:text-4xl/tight md:text-5xl/tight
           font-bold text-heading-1"
-        >
-          <span
-            class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-20% via-primary via-30% to-green-600"
-            >¡ Acequiones !</span
           >
-        </h1>
-        <Paragraph className={"pt-10"}>
-          Nos encargamos del proceso y la exportación de tus limones.
-        </Paragraph>
-        <div class="mx-auto max-w-md sm:max-w-xl pt-10">
-          <Button variant={"primary"} >
-            <span class="text-white relative z-[5]">Contáctanos</span>
-          </Button>
-        </div>
+            <span
+              class="block pt-2 text-transparent bg-clip-text bg-gradient-to-br from-[#beb838] via-[#d8d500] to-[#00ae4d]"
+              >¡ Acequiones !</span
+            >
+          </h1>
+        </Fade>
+        <Fade>
+          <Paragraph className={"pt-10 "}>
+            Nos encargamos del proceso y la exportación de tus limones.
+          </Paragraph>
+        </Fade>
+        <Fade>
+          <div class="mx-auto max-w-md sm:max-w-xl pt-10">
+            <Button variant={"primary"}>
+              <span class="text-white relative z-[5]">Contáctanos</span>
+            </Button>
+          </div>
+        </Fade>
       </div>
     </div>
   </Container>

@@ -1,0 +1,33 @@
+---
+import { animate } from "motion";
+---
+
+<div class="fade-up">
+  <slot />
+</div>
+
+<script>
+  import { animate } from "motion";
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animate(
+            entry.target,
+            { opacity: 1, y: 0 },
+            { duration: 1, easing: "ease-out" }
+          );
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  document.querySelectorAll(".fade-up").forEach((el) => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(30px)";
+    observer.observe(el);
+  });
+</script>

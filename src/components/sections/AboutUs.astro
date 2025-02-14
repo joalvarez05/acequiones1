@@ -1,103 +1,95 @@
 ---
 import Info from "../cards/Info.astro";
-import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
-import Title from "../shared/Title.astro";
+import Fade from "../fadeUp/Fade.astro";
 ---
 
-<section id="about-us">
-  <Container className="flex flex-col midmd:flex-row gap-10 lg:gap-12">
+<section id="about-us" class="w-full mx-auto px-4 md\:px-14 sm\:px-8">
+  <Fade>
     <div
-      class="max-w-md mx-auto midmd:max-w-none lg:mx-0 lg:pr-10 xl:pr-2 flex-1 flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-auto"
+      class="grid grid-cols-1 midmd:grid-cols-2 lg:grid-cols-2 gap-4 my-10 lg:gap-12 animate-fadeUp"
     >
-      <div class="w-full h-80 sm:h-96 midmd:h-full relative">
-        <div
-          class="absolute rotate-45 -left-5 md:-left-10 lg:-left-20 xl:-left-24 p-1 top-1/2 w-16 h-16 bg-gradient-to-br from-primary to-orange-400 blur-3xl opacity-50"
-        >
+      <div class="flex justify-center items-center">
+        <!-- Columna 1: Imagen -->
+        <div class="flex justify-center items-center">
+          <div class="w-full flex h-80 sm:h-96 midmd:h-full relative">
+            <img
+              src="./images/campo.jpeg"
+              alt="Imagen de Acequiones"
+              class="w-full h-full object-cover rounded-lg shadow-lg"
+            />
+          </div>
         </div>
-        <div
-          class="absolute p-1 -top-4 md:-top-10 right-0 w-20 h-20 bg-gradient-to-br from-primary to-orange-400 rounded-full blur-3xl opacity-60"
+      </div>
+      <div class="flex flex-col justify-center mt-5">
+        <h2
+          class="text-heading-1 font-semibold text-2xl sm:text-2xl md:text-4xl mb-8 sm:mb-2 text-center"
         >
-        </div>
-        <span
-          class="absolute w-full aspect-[16/5] -skew-x-12 rounded-full bg-gradient-to-tr from-primary to-green-400 opacity-40 blur-2xl left-0 bottom-0"
-        ></span>
-        <img
-          src={"/images/dev-with-c-1.webp"}
-          alt="banner image"
-          width="1240"
-          height="1385"
-          class="w-auto left-1/2 -translate-x-1/2 absolute bottom-0 max-h-full"
-        />
+          Acequiones nace en el año 2019
+        </h2>
+        <Paragraph>
+          Cultivados en campos con condiciones perfectas, nuestros limones
+          destacan por su sabor vibrante, su jugoso contenido y su aroma
+          irresistible. Nos enorgullece cumplir con los estándares
+          internacionales más exigentes, lo que nos permite llevar estos
+          productos excepcionales a los mercados más selectos del mundo,
+          incluyendo <span class="text-lime-300">Rusia y EE.UU</span>. Tanto si
+          buscas limones para consumo fresco como para procesamiento, nuestros
+          limones son la opción preferida por su inigualable excelencia y sabor.
+        </Paragraph>
       </div>
     </div>
-    <div class="flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col">
-      <Title>Acequiones nace en el año 2019</Title>
-      <Paragraph className="mt-6">
-        Cultivados en campos con condiciones perfectas, nuestros limones
-        destacan por su sabor vibrante, su jugoso contenido y su aroma
-        irresistible. Nos enorgullece cumplir con los estándares internacionales
-        más exigentes, lo que nos permite llevar estos productos excepcionales a
-        los mercados más selectos del mundo, incluyendo <span
-          class="text-lime-300"
-        >
-          Rusia y EE.UU
-        </span>. Tanto si buscas limones para consumo fresco como para
-        procesamiento, nuestros limones son la opción preferida por su
-        inigualable excelencia y sabor.
-      </Paragraph>
-      <div
-        class="pt-8 grid grid-cols-2 items-center gap-4 max-w-3xl md:max-w-[none]"
+  </Fade>
+  <Fade>
+    <div
+      class="col-span-1 midmd:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6 animate-fadeUp"
+    >
+      <Info
+        description="Liderar el empaque y distribución de limones de alta calidad, abasteciendo el mercado interno y exportando al mundo. Comprometidos con la sostenibilidad, garantizamos productos frescos y seguros mediante prácticas agrícolas responsables."
+        title="Misión"
       >
-        <Info
-          description="Lorem ipsum dolor sit amet consectetur"
-          title="Misión"
-        >
-          <span slot="icon">
-            <svg
-             
-              width="30"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-4 h-4 sm:w-5 sm:h-5"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
-              ></path>
-            </svg>
-          </span>
-        </Info>
-        <Info
-          description="Lorem ipsum dolor sit amet consectetur"
-          title="Visión"
-        >
-          <span slot="icon">
-            <svg
-            
-              width="30"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-4 h-4 sm:w-5 sm:h-5"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
-              ></path>
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-            </svg>
-          </span>
-        </Info>
-      </div>
+        <span slot="icon" class="animate-pulse">
+          <svg
+            width="30"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-4 h-4 sm:w-5 sm:h-5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
+            ></path>
+          </svg>
+        </span>
+      </Info>
+      <Info
+        description="Priorizamos la calidad en cada proceso, fomentamos el trabajo en equipo para crecer juntos, valoramos el respeto en cada interacción y actuamos con integridad, manteniendo siempre la honestidad y la transparencia."
+        title="Valores"
+      >
+        <span slot="icon" class="animate-pulse">
+          <svg
+            width="30"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-4 h-4 sm:w-5 sm:h-5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
+            ></path>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+        </span>
+      </Info>
     </div>
-  </Container>
+  </Fade>
 </section>

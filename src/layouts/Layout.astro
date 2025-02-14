@@ -14,6 +14,14 @@ const description =
 <!doctype html>
 <html lang="es">
   <head>
+    <link
+      rel="preload"
+      href="../../public/images/lemon-card.webp"
+      as="image"
+      type="image/webp"
+      fetchpriority="high"
+    />
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="author" content="Alvarez Domínguez José Agustín" />
@@ -46,87 +54,91 @@ const description =
     <Navbar />
     <slot />
     <Footer />
-  </body>
-  <script>
-    const switchTheme = document.querySelector(
-      "[data-switch-theme]"
-    ) as HTMLButtonElement;
 
-    if (
-      localStorage.getItem("appTheme") === "dark" ||
-      (!("appTheme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    if (switchTheme) {
-      switchTheme.addEventListener("click", (e) => {
-        e.preventDefault();
-        const doc = document.documentElement;
-        if (doc) {
-          if (localStorage.getItem("appTheme")) {
-            if (localStorage.getItem("appTheme") === "light") {
-              doc.classList.add("dark");
-              localStorage.setItem("appTheme", "dark");
+    <script>
+      const switchTheme = document.querySelector(
+        "[data-switch-theme]"
+      ) as HTMLButtonElement;
+
+      if (
+        localStorage.getItem("appTheme") === "dark" ||
+        (!("appTheme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+      if (switchTheme) {
+        switchTheme.addEventListener("click", (e) => {
+          e.preventDefault();
+          const doc = document.documentElement;
+          if (doc) {
+            if (localStorage.getItem("appTheme")) {
+              if (localStorage.getItem("appTheme") === "light") {
+                doc.classList.add("dark");
+                localStorage.setItem("appTheme", "dark");
+              } else {
+                document.documentElement.classList.remove("dark");
+                localStorage.setItem("appTheme", "light");
+              }
             } else {
-              document.documentElement.classList.remove("dark");
-              localStorage.setItem("appTheme", "light");
-            }
-          } else {
-            if (doc.classList.contains("dark")) {
-              doc.classList.remove("dark");
-              localStorage.setItem("appTheme", "light");
-            } else {
-              doc.classList.add("dark");
-              localStorage.setItem("appTheme", "dark");
+              if (doc.classList.contains("dark")) {
+                doc.classList.remove("dark");
+                localStorage.setItem("appTheme", "light");
+              } else {
+                doc.classList.add("dark");
+                localStorage.setItem("appTheme", "dark");
+              }
             }
           }
-        }
-      });
-    }
-  </script>
-  <script>
-    const toggleMenu = document.querySelector(
-      "[data-toggle-nav]"
-    ) as HTMLButtonElement;
-    const navbar = document.querySelector("[data-navbar]") as HTMLDivElement;
-    const overlayNav = document.querySelector(
-      "[data-nav-overlay]"
-    ) as HTMLDivElement;
-    if (toggleMenu) {
-      toggleMenu.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (toggleMenu.getAttribute("data-open-nav") === "false") {
-          toggleMenu.setAttribute("data-open-nav", "true");
-          overlayNav.setAttribute("data-is-visible", "true");
-          document.body.classList.add("!overflow-y-hidden");
-          navbar.style.height = `${navbar.scrollHeight}px`;
-        } else {
+        });
+      }
+    </script>
+
+    <!-- Menú de Navegación Scripts -->
+    <script>
+      const toggleMenu = document.querySelector(
+        "[data-toggle-nav]"
+      ) as HTMLButtonElement;
+      const navbar = document.querySelector("[data-navbar]") as HTMLDivElement;
+      const overlayNav = document.querySelector(
+        "[data-nav-overlay]"
+      ) as HTMLDivElement;
+      if (toggleMenu) {
+        toggleMenu.addEventListener("click", (e) => {
+          e.preventDefault();
+          if (toggleMenu.getAttribute("data-open-nav") === "false") {
+            toggleMenu.setAttribute("data-open-nav", "true");
+            overlayNav.setAttribute("data-is-visible", "true");
+            document.body.classList.add("!overflow-y-hidden");
+            navbar.style.height = `${navbar.scrollHeight}px`;
+          } else {
+            toggleMenu.setAttribute("data-open-nav", "false");
+            overlayNav.setAttribute("data-is-visible", "false");
+            document.body.classList.remove("!overflow-y-hidden");
+            navbar.style.height = "0px";
+          }
+        });
+
+        navbar.addEventListener("click", () => {
           toggleMenu.setAttribute("data-open-nav", "false");
           overlayNav.setAttribute("data-is-visible", "false");
           document.body.classList.remove("!overflow-y-hidden");
           navbar.style.height = "0px";
-        }
-      });
+        });
 
-      navbar.addEventListener("click", () => {
-        toggleMenu.setAttribute("data-open-nav", "false");
-        overlayNav.setAttribute("data-is-visible", "false");
-        document.body.classList.remove("!overflow-y-hidden");
-        navbar.style.height = "0px";
-      });
-
-      overlayNav.addEventListener("click", () => {
-        toggleMenu.setAttribute("data-open-nav", "false");
-        overlayNav.setAttribute("data-is-visible", "false");
-        document.body.classList.remove("!overflow-y-hidden");
-        navbar.style.height = "0px";
-      });
-    }
-  </script>
+        overlayNav.addEventListener("click", () => {
+          toggleMenu.setAttribute("data-open-nav", "false");
+          overlayNav.setAttribute("data-is-visible", "false");
+          document.body.classList.remove("!overflow-y-hidden");
+          navbar.style.height = "0px";
+        });
+      }
+    </script>
+  </body>
 </html>
+
 <style is:global>
   :root {
     --color-bg: 255 255 255;
@@ -153,6 +165,7 @@ const description =
   html {
     scroll-behavior: smooth;
   }
+
   body {
     font-family: "Lora", sans-serif;
   }
