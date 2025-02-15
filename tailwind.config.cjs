@@ -1,7 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  darkMode: "class",
+  content: [
+    "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+    "./node_modules/flowbite/**/*.js", // Agregar flowbite al contenido para que funcione bien
+  ],
+  darkMode: "class", // Usa clase para el modo oscuro
   theme: {
     extend: {
       animation: {
@@ -22,11 +25,13 @@ module.exports = {
       },
       keyframes: {
         fadeUp: {
-          "0%": { opacity: "0", transform: "translateY(20px)" }, // Empezar desvanecido y abajo
-          "100%": { opacity: "1", transform: "translateY(0)" }, // Terminar visible y en posición original
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("flowbite/plugin"), 
+  ],
 };
