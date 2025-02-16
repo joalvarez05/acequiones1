@@ -2,9 +2,9 @@
 module.exports = {
   content: [
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
-    "./node_modules/flowbite/**/*.js", // Agregar flowbite al contenido para que funcione bien
+    "./node_modules/flowbite/**/*.js",
   ],
-  darkMode: "class", // Usa clase para el modo oscuro
+  darkMode: "class",
   theme: {
     extend: {
       animation: {
@@ -31,7 +31,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("flowbite/plugin"), 
-  ],
+  plugins: [require("flowbite/plugin")],
 };
