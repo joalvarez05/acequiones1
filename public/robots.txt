@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /error404/
+Sitemap: https://acequiones.vercel.app/sitemap.xml
