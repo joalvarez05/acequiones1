@@ -13,25 +13,24 @@ import Container from "@/components/shared/Container.astro";
           <h4
             class="font-semibold text-xl sm:text-2xl md:text-4xl text-heading-2 text-emerald-300"
           >
-            + 4
+            4
           </h4>
           <p class="mt-2 text-heading-2">Países</p>
         </div>
-
         <div class="text-center">
           <h4
             class="font-semibold text-xl sm:text-2xl md:text-3xl text-heading-1 text-emerald-300"
           >
-            + 3
+            3
           </h4>
           <p class="mt-2 text-heading-2">Certificaciones</p>
         </div>
-
         <div class="text-center">
           <h2
             class="font-semibold text-xl sm:text-2xl md:text-4xl text-heading-1 text-emerald-300"
+            id="number1"
           >
-            + 400
+            500
           </h2>
           <p class="mt-2 text-heading-2">Empleados</p>
           <p class="text-heading-2">en temporada</p>
@@ -40,6 +39,7 @@ import Container from "@/components/shared/Container.astro";
         <div class="text-center">
           <h2
             class="font-semibold text-xl sm:text-2xl md:text-4xl text-heading-1 text-emerald-300"
+          
           >
             + 5
           </h2>
@@ -49,3 +49,21 @@ import Container from "@/components/shared/Container.astro";
     </Fade>
   </Container>
 </section>
+
+<script>
+  import { CountUp } from "countup.js";
+
+  const options = {
+    startVal: 0,
+    duration: 3,
+  };
+
+  const countUp1 = new CountUp("number1", 500, { ...options });
+
+
+  if (!countUp1.error) {
+    countUp1.start();
+  }
+
+  
+</script>
