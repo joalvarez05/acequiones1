@@ -59,7 +59,7 @@ function Formulario() {
         text: "Te responderemos a la brevedad.",
         icon: "success",
       }).then(() => {
-        window.location.href = "https://mozi-ret.vercel.app/";
+        window.location.href = "https://acequiones.vercel.app/";
       });
     } catch (error) {
       console.error("Error al enviar email:", error);
