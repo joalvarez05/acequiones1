@@ -3,9 +3,11 @@ import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/shared/Container.astro";
 import Formulario from "@/components/formulario/Formulario.jsx";
 const title = "Contacto";
+const description =
+  "Ponte en contacto con Acequiones para cualquier consulta sobre la exportación y procesamiento de limones frescos de alta calidad. Estamos aquí para ayudarte!";
 ---
 
-<Layout title={title}>
+<Layout title={title} description={description}>
   <Container>
     <Formulario client:load />
   </Container>

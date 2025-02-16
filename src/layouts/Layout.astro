@@ -4,11 +4,10 @@ import Navbar from "@/components/elements/Navbar.astro";
 
 export interface Props {
   title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
-const description =
-  "Ponte en contacto con Acequiones para cualquier consulta sobre la exportación y procesamiento de limones frescos de alta calidad. Estamos aquí para ayudarte!";
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -21,32 +20,38 @@ const description =
       type="image/webp"
       fetchpriority="high"
     />
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="author" content="Alvarez Domínguez José Agustín" />
     <link rel="canonical" href="https://acequiones.vercel.app/" />
+    <meta name="robots" content="index, follow" />
+    <meta name="geo.placename" content="Argentina" />
+    <meta name="geo.region" content="AR" />
+    <meta name="geo.position" content="-26.830584, -65.203842" />
+    <meta name="ICBM" content="-26.830584, -65.203842" />
     <meta
       name="keywords"
-      content="Acequiones, limones frescos, exportación de limones, comercio internacional de limones, limones premium, proveedor de limones, limones Argentina,limones EEUU,limones Rusia, venta de limones, limones de calidad, exportación de frutas, comercio global de limones"
+      content="Acequiones, limones frescos, exportación de limones, comercio internacional de limones, limones premium, proveedor de limones, limones Argentina,limones EEUU,limones Rusia, venta de limones, limones de calidad, exportación de frutas, comercio global de limones, precio limon."
     />
     <meta name="description" content={description} />
+    <meta
+      property="og:image"
+      content="https://acequiones.vercel.app/logo-negro.svg"
+    />
     <meta property="og:title" content="Acequiones - Exportación de Limones" />
     <meta
       property="og:description"
-      content="Producimos y exportamos los mejores limones. Conoce más sobre Acequiones."
+      content="🍋 Mejor empaque 2025 🍋. Producimos y exportamos los limones más frescos y de alta calidad de Argentina. ¡Descúbrelos! 🚀"
     />
-    <meta
-      property="og:image"
-      content="https://mozi-ret.vercel.app/logo-blanco.svg"
-    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
     <meta property="og:url" content="https://acequiones.vercel.app/" />
     <link rel="icon" type="image/svg+xml" href="/logo-blanco.svg" />
     <meta name="generator" content={Astro.generator} />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"
     ></script>
-    <title>Acequiones SRL · {title}</title>
+    <title>Acequiones · {title}</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
