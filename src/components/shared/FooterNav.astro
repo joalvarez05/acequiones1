@@ -2,6 +2,7 @@
 export interface Props {
   title: string;
   navItems: {
+    item: string;
     itemText: string;
     itemLink: string;
   }[];
@@ -19,6 +20,7 @@ const { title, navItems } = Astro.props;
       navItems.map((navItem) => (
         <li>
           <a href={navItem.itemLink} class="transition hover:text-primary">
+            <span class="font-bold">{navItem.item}</span>:
             {navItem.itemText}
           </a>
         </li>

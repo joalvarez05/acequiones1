@@ -25,6 +25,14 @@ button:disabled:hover {
   max-height: 150px;
   resize: none;
 }
+.map-hover {
+  filter: brightness(80%);
+  transition: 0.3s;
+}
+.map-hover:hover {
+  filter: brightness(100%);
+}
+
 @keyframes animloader {
   0% {
     box-shadow: 14px 0 0 -2px, 38px 0 0 -2px, -14px 0 0 -2px, -38px 0 0 -2px;
