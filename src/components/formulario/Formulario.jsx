@@ -3,7 +3,6 @@ import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import "./formulario.css";
-
 function Formulario() {
   const [isLoading, setIsLoading] = useState(false);
   const {
@@ -76,8 +75,9 @@ function Formulario() {
 
   return (
     <>
-      <div className="pt-44">
-        <h1 className="text-heading-1 dark:text-white text-black ms-6 mb-8 font-semibold text-2xl sm:text-3xl md:text-4xl">
+      <div className="pt-44"></div>
+      <div class="ms-6 mb-12">
+        <h1 className="dark:text-white font-bold text-black text-3xl">
           Contacto
         </h1>
       </div>
