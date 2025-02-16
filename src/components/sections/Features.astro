@@ -1,74 +1,31 @@
 ---
 import Container from "@/components/shared/Container.astro";
-import Paragraph from "@/components/shared/Paragraph.astro";
-import Title from "@/components/shared/Title.astro";
+import PreguntasFrec from "@/components/preguntasFrec/PreguntasFrec.astro";
+const accordionItems = [
+  {
+    title: "¿Por qué los limones de Tucumán son los mejores del mundo?",
+    content:
+      "Los limones de Tucumán, Argentina, son reconocidos mundialmente por su sabor y frescura excepcionales. Gracias a las condiciones climáticas ideales y las técnicas de cultivo sostenibles, nuestros limones destacan por su alto contenido de jugo y aroma vibrante. ¡Son ideales tanto para consumo fresco como para jugo!",
+  },
+  {
+    title: "¿Cómo exportan limones frescos desde Tucumán a otros países?",
+    content:
+      "Exportamos limones frescos directamente desde Tucumán a mercados internacionales como Rusia, Estados Unidos y Europa. Usamos transporte refrigerado para garantizar que los limones lleguen frescos y en perfectas condiciones, manteniendo la calidad que caracteriza a los limones argentinos.",
+  },
+  {
+    title: "¿Cuáles son los beneficios de consumir limones?",
+    content:
+      "El consumo de limones tucumanos aporta beneficios como una gran fuente de vitamina C, antioxidantes y propiedades digestivas. Además, su alto contenido de nutrientes promueve una piel saludable y refuerza el sistema inmunológico. ¡El limón de Tucumán es una excelente opción para tu salud!",
+  },
+  {
+    title: "¿Comprar limones frescos de Tucumán al por mayor en Argentina?",
+    content:
+      "Si estás buscando limones al por mayor en Argentina, especialmente de Tucumán, ofrecemos precios competitivos y entregas a todo el país. Contáctanos para obtener información sobre nuestras opciones de compra y distribución de limones frescos para tu negocio o exportación.",
+  },
+];
 ---
 
 <section id="features">
-  <Container className="flex flex-col midmd:flex-row gap-10 lg:gap-12">
-    <div class="flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col">
-      <Title> We provide Important Features for Digital Marketing </Title>
-      <Paragraph className="mt-8">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        <br />
-        Minus, saepe aliquid autem alias vero distinctio dignissimos consequatur?
-      </Paragraph>
-      <Paragraph className="mt-2">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, saepe
-        aliquid autem alias vero distinctio dignissimos consequatur?
-      </Paragraph>
-      <ul class="mt-8 space-y-4 text-heading-3 font-medium">
-        <li>
-          <span
-            class="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center"
-            >&checkmark;</span
-          > Web site Analysis
-        </li>
-        <li>
-          <span
-            class="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center"
-            >&checkmark;</span
-          > Free optimazation.
-        </li>
-        <li>
-          <span
-            class="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center"
-            >&checkmark;</span
-          > Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        </li>
-        <li>
-          <span
-            class="font-bold bg-box-bg rounded-full w-8 h-8 mr-3 text-primary inline-flex justify-center items-center"
-            >&checkmark;</span
-          > Content Optimization.
-        </li>
-      </ul>
-    </div>
-
-    <div
-      class="max-w-md mx-auto midmd:max-w-none lg:mx-0 lg:pr-10 xl:pr-2 flex-1 flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-auto"
-    >
-      <div class="w-full h-80 sm:h-96 midmd:h-full relative">
-        <div
-          class="absolute rotate-45 -left-5 md:-left-10 lg:-left-20 xl:-left-24 p-1 top-1/2 w-16 h-16 bg-gradient-to-br from-primary to-orange-400 blur-3xl opacity-50"
-        >
-        </div>
-        <div
-          class="absolute p-1 -top-4 md:-top-10 right-0 w-20 h-20 bg-gradient-to-br from-primary to-orange-400 rounded-full blur-3xl opacity-60"
-        >
-        </div>
-
-        <span
-          class="absolute w-full aspect-[16/5] -skew-x-12 rounded-full bg-gradient-to-tr from-primary to-green-400 opacity-40 blur-2xl left-0 bottom-0"
-        ></span>
-        <img
-          src={"/images/dev-with-c.webp"}
-          alt="banner image"
-          width="1240"
-          height="1385"
-          class="w-auto left-1/2 -translate-x-1/2 absolute bottom-0 max-h-full"
-        />
-      </div>
-    </div>
-  </Container>
+  <Container className="flex flex-col midmd:flex-row gap-10 lg:gap-12" />
+  <PreguntasFrec items={accordionItems} />
 </section>

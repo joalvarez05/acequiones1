@@ -3,12 +3,7 @@ import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import "./formulario.css";
-
 function Formulario() {
-  useEffect(() => {
-    console.log("Form data:");
-  }, []);
-
   const [isLoading, setIsLoading] = useState(false);
   const {
     register,
@@ -22,19 +17,52 @@ function Formulario() {
   const publicKey = import.meta.env.PUBLIC_VITE_APP_PUBLIC_KEY;
   const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/;
 
+  const sanitizarInput = (text) => {
+    return text.replace(/[^a-zA-Z0-9ÁáÉéÍíÓóÚúÜüÑñ ]/g, "").trim();
+  };
   const sendEmail = async (data) => {
     setIsLoading(true);
-    console.log("datos enviados", data);
+
+    const nombreSanitizado = sanitizarInput(data.name);
+    const telefonoSanitizado = sanitizarInput(data.telefono);
+    const messageSanitizado = sanitizarInput(data.message);
+
+    if (!nombreSanitizado || !messageSanitizado) {
+      Swal.fire({
+        title: "Campos inválidos",
+        text: "Por favor, completa todos los campos correctamente.",
+        icon: "warning",
+      });
+      setIsLoading(false);
+      return;
+    }
+    console.log("Datos enviados:", data);
+
     try {
-      await emailjs.send(serviceId, templateId, data, publicKey);
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          name: nombreSanitizado,
+          telefono: telefonoSanitizado,
+          email: data.email,
+          message: messageSanitizado,
+        },
+        publicKey
+      );
+
+      console.log("Email enviado con éxito:", response);
+
       reset();
       Swal.fire({
         title: "Formulario enviado con éxito!",
         text: "Te responderemos a la brevedad.",
         icon: "success",
-      }).then(() => (window.location.href = "https://mozi-ret.vercel.app/"));
+      }).then(() => {
+        window.location.href = "https://mozi-ret.vercel.app/";
+      });
     } catch (error) {
-      console.log("error" + error);
+      console.error("Error al enviar email:", error);
       Swal.fire({
         title: "Hubo un error!",
         text: "Inténtalo nuevamente.",
@@ -47,10 +75,15 @@ function Formulario() {
 
   return (
     <>
-      <div className="pt-44 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+      <div className="pt-44"></div>
+      <div class="ms-6 mb-12">
+        <h1 className="dark:text-white font-bold text-black text-3xl">
+          Contacto
+        </h1>
+      </div>
+      <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 ">
         <div>
           <form className="space-y-4" onSubmit={handleSubmit(sendEmail)}>
-            {/* Campo de nombre */}
             <div className="form-group">
               <label
                 htmlFor="name"
@@ -61,6 +94,7 @@ function Formulario() {
               <input
                 type="text"
                 id="name"
+                name="name"
                 autoComplete="name"
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 {...register("name", {
@@ -97,6 +131,7 @@ function Formulario() {
               <input
                 type="email"
                 id="email"
+                name="email"
                 autoComplete="email"
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 {...register("email", {
@@ -120,15 +155,15 @@ function Formulario() {
                 htmlFor="telefono"
                 className="block text-sm font-medium text-black dark:text-white"
               >
-                Teléfono (*)
+                Teléfono
               </label>
               <input
                 type="tel"
                 id="telefono"
+                name="telefono"
                 autoComplete="tel"
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 {...register("telefono", {
-                  required: "El teléfono es obligatorio",
                   pattern: {
                     value: /^(?=.*[1-9])\d{6,16}$/,
                     message: "Se permiten minimo 6 números",
@@ -152,6 +187,7 @@ function Formulario() {
               </label>
               <textarea
                 id="message"
+                name="message"
                 autoComplete="off"
                 rows="3"
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-area"
@@ -213,7 +249,7 @@ function Formulario() {
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.401594148882!2d-65.34040102183505!3d-26.922480316412543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x942245004c7c371f%3A0x283ea19f4be52a40!2sAcequiones!5e0!3m2!1ses!2sar!4v1739481146312!5m2!1ses!2sar"
                 width="450"
                 height="350"
-                className="rounded-xl w-full"
+                className="rounded-xl w-full map-hover"
                 loading="lazy"
               ></iframe>
             </div>

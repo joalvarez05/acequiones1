@@ -9,7 +9,11 @@ const { title, description } = Astro.props;
 ---
 
 <div
-  class="p-5 sm:p-6 lg:p-8 rounded-3xl border border-box-border bg-box-bg shadow-lg shadow-box-shadow relative overflow-hidden"
+  class="p-5 sm:p-6 lg:p-8 rounded-3xl border border-box-border bg-box-bg shadow-lg shadow-box-shadow relative overflow-hidden transition-all duration-300
+hover:border-[#00BFFF]/50
+hover:shadow-[0_0_15px_rgba(0,191,255,0.5)]
+dark:hover:border-primary/50
+dark:hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]"
 >
   <div
     class="rounded-xl bg-gray-300 dark:bg-gray-950 p-3 text-heading-1 w-max relative"

@@ -3,72 +3,19 @@ import GroupFooterNav from "../blocks/GroupFooterNav.astro";
 import Container from "../shared/Container.astro";
 import FooterNav from "../shared/FooterNav.astro";
 import Paragraph from "../shared/Paragraph.astro";
-
-const footerNav1 = [
-  {
-    itemText: "Marketing",
-    itemLink: "#",
-  },
-  {
-    itemText: "Analylitics",
-    itemLink: "#",
-  },
-  {
-    itemText: "Commerce",
-    itemLink: "#",
-  },
-  {
-    itemText: "Insights",
-    itemLink: "#",
-  },
-];
-
+const numeroTelefono = "543815063483";
+const mensaje = "¡Hola, quiero realizar una consulta!";
 const footerSupport = [
   {
+    item: "Dirección",
     itemText: "Dalmacio Quiles 302, T4128 Lules, Tucumán",
     itemLink:
       "https://www.google.com.ar/maps/place/Acequiones/@-26.9224756,-65.338105,17z/data=!3m1!4b1!4m6!3m5!1s0x942245004c7c371f:0x283ea19f4be52a40!8m2!3d-26.9224804!4d-65.3355301!16s%2Fg%2F11wh9dc40g?hl=es&entry=ttu&g_ep=EgoyMDI1MDIxMC4wIKXMDSoASAFQAw%3D%3D",
   },
   {
-    itemText: "Contact",
-    itemLink: "#",
-  },
-];
-
-const footerCompany = [
-  {
-    itemText: "About",
-    itemLink: "/about",
-  },
-  {
-    itemText: "Blog",
-    itemLink: "#",
-  },
-  {
-    itemText: "Jobs",
-    itemLink: "#",
-  },
-  {
-    itemText: "Parteners",
-    itemLink: "#",
-  },
-  {
-    itemText: "Jobs",
-    itemLink: "#",
-  },
-];
-const footerLegal = [
-  {
-    itemText: "Claim",
-    itemLink: "/#",
-  },
-  {
-    itemText: "Privacy",
-    itemLink: "#",
-  },
-  {
-    itemText: "Terms",
-    itemLink: "#",
+    item: "Teléfono",
+    itemText: "+549-381-506-3483",
+    itemLink: `https://api.whatsapp.com/send?phone=${numeroTelefono}&text=${mensaje}`,
   },
 ];
 ---
@@ -120,6 +67,7 @@ const footerLegal = [
                 alt="acequiones limones"
                 title="argentinian lemon"
                 class="w-14 dark:hidden"
+                loading="lazy"
               />
               <!-- agua con limon -->
               <img
@@ -127,6 +75,7 @@ const footerLegal = [
                 title="limon argentino"
                 alt="limon argentina acequiones"
                 class="w-14 hidden dark:block"
+                loading="lazy"
               />
             </div>
             <div class="inline-flex text-lg font-semibold text-heading-1">
@@ -188,12 +137,9 @@ const footerLegal = [
           </div>
         </div>
       </div>
-    </div>
-    <div
-      class="grid grid-cols-1 lg:grid-cols-2 lg:items-stretch gap-8 relative mt-6 mb-2"
-    >
+
       <GroupFooterNav>
-        <FooterNav title={"Contáctanos"} navItems={footerSupport} />
+        <FooterNav title={"Contacto"} navItems={footerSupport} />
       </GroupFooterNav>
     </div>
   </Container>
