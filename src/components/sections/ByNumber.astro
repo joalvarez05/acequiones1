@@ -11,38 +11,48 @@ import Container from "@/components/shared/Container.astro";
       >
         <div class="text-center">
           <h4
-            class="font-semibold text-xl sm:text-2xl md:text-4xl text-heading-2 text-emerald-300"
+            class="font-semibold text-2xl sm:text-2xl md:text-4xl text-emerald-300"
           >
             + 4
           </h4>
-          <p class="mt-2 text-heading-2">Países</p>
+          <p class="mt-2 text-2xl sm:text-2xl md:text-4xl text-heading-2">
+            Países
+          </p>
         </div>
         <div class="text-center">
           <h4
-            class="font-semibold text-xl sm:text-2xl md:text-3xl text-heading-1 text-emerald-300"
+            class="font-semibold text-2xl sm:text-2xl md:text-3xl text-emerald-300"
           >
             + 3
           </h4>
-          <p class="mt-2 text-heading-2">Certificaciones</p>
+          <p class="mt-2 text-heading-2 text-2xl sm:text-2xl md:text-4xl">
+            Certificaciones
+          </p>
         </div>
         <div class="text-center">
           <h2
-            class="font-semibold text-xl sm:text-2xl md:text-4xl text-heading-1 text-emerald-300"
+            class="font-semibold text-2xl sm:text-2xl md:text-4xl text-emerald-300"
             id="number1"
           >
             500
           </h2>
-          <p class="mt-2 text-heading-2">Empleados</p>
-          <p class="text-heading-2">en temporada</p>
+          <p class="mt-2 text-heading-2 text-2xl sm:text-2xl md:text-4xl">
+            Empleados
+          </p>
+          <p class="text-heading-2 text-2xl sm:text-2xl md:text-4xl">
+            en temporada
+          </p>
         </div>
         <!-- argenti lemon sa -->
         <div class="text-center">
           <h2
-            class="font-semibold text-xl sm:text-2xl md:text-4xl text-heading-1 text-emerald-300"
+            class="font-semibold text-2xl sm:text-2xl md:text-4xl text-emerald-300"
           >
             + 5
           </h2>
-          <p class="mt-2 text-heading-2">Años exportando fruta</p>
+          <p class="mt-2 text-2xl sm:text-2xl md:text-4xl text-heading-2">
+            Años exportando fruta
+          </p>
         </div>
       </div>
     </Fade>
@@ -64,17 +74,15 @@ import Container from "@/components/shared/Container.astro";
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         countUp1.start();
-        observer.unobserve(entry.target); 
+        observer.unobserve(entry.target);
       }
     });
   }
 
-
   const observer = new IntersectionObserver(handleIntersection, {
-    root: null, 
-    threshold: 0.5, 
+    root: null,
+    threshold: 0.5,
   });
-
 
   const target = document.getElementById("number1");
   if (target) {
