@@ -35,7 +35,7 @@ const navItems = [
             />
           </div>
           <div class="inline-flex text-lg font-semibold text-heading-1">
-            Acequiones
+            <span class="shadow-drop"> Acequiones </span>
           </div>
         </a>
       </div>
@@ -193,3 +193,9 @@ const navItems = [
 
   loadWeatherData();
 </script>
+
+<style>
+  .shadow-drop {
+    filter: drop-shadow(0 0 0.75rem rgba(247, 255, 2, 0.651));
+  }
+</style>

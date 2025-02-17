@@ -27,11 +27,10 @@ const { items } = Astro.props;
     {
       items.map((item, index) => (
         <div
-          class="  hover:border-[#beb838]/50 
-  hover:border-[#00BFFF]/50 
+          class="hover:border-[#00BFFF]/50 
   hover:shadow-[0_0_15px_rgba(190,184,56,0.5)] 
   dark:hover:border-primary/50 
-  dark:hover:shadow-[0_0_15px_rgba(190,184,56,0.5)]"
+  dark:hover:shadow-[0_0_15px_rgba(190,184,56,0.5)] rounded-lg"
         >
           <h5 id={`accordion-open-heading-${index}`}>
             <button
@@ -68,7 +67,7 @@ const { items } = Astro.props;
             aria-labelledby={`accordion-open-heading-${index}`}
           >
             <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900 ">
-              <p class="mb-2 text-gray-500 dark:text-gray-400 text-sm/7 text-base lg:text-lg md:text-base sm:text-base">
+              <p class="mb-2 text-gray-500 dark:text-gray-400 text-base lg:text-lg md:text-base sm:text-base">
                 {item.content}
               </p>
             </div>

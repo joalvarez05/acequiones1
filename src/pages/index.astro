@@ -6,13 +6,13 @@ import AboutUs from "@/components/sections/AboutUs.astro";
 import Features from "@/components/sections/Features.astro";
 import CTA from "@/components/sections/CTA.astro";
 import Brands from "@/components/sections/Brands.astro";
-import BtnWsp from "@/components/shared/BtnWsp.astro";
+import BtnWsp from "@/components/shared/BtnWsp.jsx";
 import Arrow from "@/components/shared/Arrow.astro";
 ---
 
 <Layout
   title="Exportación de limones"
-  description="En Acequiones, nos especializamos en la venta, empaque y exportación de limones frescos de alta calidad. Ofrecemos productos de excelente sabor y frescura para mercados internacionales, asegurando un servicio confiable y eficiente."
+  description="Acequiones exporta limones frescos de alta calidad desde Argentina. Garantizamos sabor, frescura y envíos confiables a mercados globales."
 >
   <main class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
     <Hero />
@@ -21,7 +21,7 @@ import Arrow from "@/components/shared/Arrow.astro";
     <AboutUs />
     <Features />
     <CTA />
-    <BtnWsp />
+    <BtnWsp client:load />
     <Arrow />
   </main>
 </Layout>
