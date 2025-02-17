@@ -39,7 +39,6 @@ import Container from "@/components/shared/Container.astro";
         <div class="text-center">
           <h2
             class="font-semibold text-xl sm:text-2xl md:text-4xl text-heading-1 text-emerald-300"
-          
           >
             + 5
           </h2>
@@ -60,10 +59,25 @@ import Container from "@/components/shared/Container.astro";
 
   const countUp1 = new CountUp("number1", 500, { ...options });
 
-
-  if (!countUp1.error) {
-    countUp1.start();
+  // Función para manejar la intersección
+  function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        countUp1.start();
+        observer.unobserve(entry.target); 
+      }
+    });
   }
 
-  
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    root: null, 
+    threshold: 0.5, 
+  });
+
+
+  const target = document.getElementById("number1");
+  if (target) {
+    observer.observe(target);
+  }
 </script>
