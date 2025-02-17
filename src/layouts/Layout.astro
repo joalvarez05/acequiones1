@@ -47,6 +47,18 @@ const { title, description } = Astro.props;
     <meta property="og:locale" content="es_AR" />
     <meta property="og:url" content="https://acequiones.vercel.app/" />
     <link rel="icon" type="image/svg+xml" href="/logo-blanco.svg" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YB0LTJKJ1Z"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-YB0LTJKJ1Z");
+    </script>
     <meta name="generator" content={Astro.generator} />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"
