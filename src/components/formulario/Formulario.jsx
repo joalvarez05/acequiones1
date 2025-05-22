@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
@@ -51,8 +51,6 @@ function Formulario() {
         publicKey
       );
 
-      console.log("Email enviado con éxito:", response);
-
       reset();
       Swal.fire({
         title: "Formulario enviado con éxito!",
@@ -62,7 +60,6 @@ function Formulario() {
         window.location.href = "https://acequiones.vercel.app/";
       });
     } catch (error) {
-      console.error("Error al enviar email:", error);
       Swal.fire({
         title: "Hubo un error!",
         text: "Inténtalo nuevamente.",
