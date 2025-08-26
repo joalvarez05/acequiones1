@@ -4,45 +4,62 @@ import Paragraph from "@/components/shared/Paragraph.astro";
 import Fade from "@/components/fadeUp/Fade.astro";
 ---
 
-<section id="about-us" class="w-full mx-auto px-4 md\:px-14 sm\:px-8">
+<section id="about-us" class="w-full mx-auto px-4 md:px-14 sm:px-8">
   <Fade>
     <div
       class="grid grid-cols-1 midmd:grid-cols-2 lg:grid-cols-2 gap-4 my-10 lg:gap-12 animate-fadeUp"
     >
+      <!-- Columna 1: Imagen -->
       <div class="flex justify-center items-center">
-        <!-- Columna 1: Imagen -->
-        <div class="flex justify-center items-center">
-          <div class="w-full flex h-80 sm:h-96 midmd:h-full relative">
-            <img
-              src="./images/campo.jpeg"
-              alt="Imagen de Acequiones"
-              loading="lazy"
-              class="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-          </div>
+        <div class="w-full flex h-80 sm:h-96 midmd:h-full relative">
+          <img
+            src="./images/campo.jpeg"
+            alt="Imagen de Acequiones"
+            loading="lazy"
+            class="w-full h-full object-cover rounded-2xl shadow-xl"
+          />
         </div>
       </div>
+
+      <!-- Columna 2: Texto -->
       <div class="flex flex-col justify-center mt-5">
         <h2
-          class="text-heading-1 font-semibold text-2xl sm:text-2xl md:text-4xl mb-8 sm:mb-2 text-center"
+          class="font-bold text-2xl sm:text-3xl md:text-4xl mb-6 text-center bg-gradient-to-r text-white bg-clip-text text-transparent"
         >
-          Acequiones nace en el año 2019
+          Somos una empresa familiar fundada en 2005
         </h2>
         <Paragraph>
-          Cultivados en campos con condiciones perfectas, nuestros limones
-          destacan por su sabor vibrante, su jugoso contenido y su aroma
-          irresistible. Nos enorgullece cumplir con los estándares
-          internacionales más exigentes, lo que nos permite llevar estos
-          productos excepcionales a los mercados más selectos del mundo,
-          incluyendo <span class="dark:text-lime-300 text-lime-600"
-            >Rusia y EE.UU</span
-          >. Tanto si buscas limones para consumo fresco como para
-          procesamiento, nuestros limones son la opción preferida por su
-          inigualable excelencia y sabor.
+          Nos especializamos en la <strong
+            >producción y comercialización de cítricos</strong
+          >. En los últimos años ampliamos nuestra actividad con la plantación
+          de
+          <strong>nuez pecán</strong> en Trancas, al norte de Tucumán. Nuestro propósito
+          es seguir creciendo y perfeccionándonos en ambos cultivos, con foco en
+          la calidad, la innovación y la sustentabilidad.
+          <br /><br />
+          <p class="font-semibold text-gray-800 dark:text-gray-200">
+            Entre nuestros objetivos estratégicos destacamos:
+          </p>
+          <ul
+            class="list-disc pl-5 mt-4 space-y-2 text-gray-700 dark:text-gray-300"
+          >
+            <li>
+              Expandir la superficie de pecán a
+              <span class="font-bold text-emerald-600 dark:text-emerald-400">
+                78 hectáreas.
+              </span>
+            </li>
+            <li>
+              Incrementar el volumen de exportaciones hacia América Latina.
+            </li>
+            <li>Abrir nuevos mercados internacionales.</li>
+          </ul>
         </Paragraph>
       </div>
     </div>
   </Fade>
+
+  <!-- Sección Misión & Valores -->
   <Fade>
     <div
       class="col-span-1 midmd:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6 animate-fadeUp"
@@ -50,15 +67,19 @@ import Fade from "@/components/fadeUp/Fade.astro";
       <Info
         description="Liderar el empaque y distribución de limones de alta calidad, abasteciendo el mercado interno y exportando al mundo. Comprometidos con la sostenibilidad, garantizamos productos frescos y seguros mediante prácticas agrícolas responsables."
         title="Misión"
+        class="rounded-2xl shadow-lg border border-gray-200/40 dark:border-gray-700/40 hover:shadow-xl hover:-translate-y-1 transition-transform duration-300"
       >
-        <span slot="icon" class="animate-pulse">
+        <span
+          slot="icon"
+          class="animate-pulse text-emerald-600 dark:text-emerald-400"
+        >
           <svg
             width="30"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="w-4 h-4 sm:w-5 sm:h-5"
+            class="w-5 h-5"
           >
             <path
               stroke-linecap="round"
@@ -68,18 +89,23 @@ import Fade from "@/components/fadeUp/Fade.astro";
           </svg>
         </span>
       </Info>
+
       <Info
         description="Priorizamos la calidad en cada proceso, fomentamos el trabajo en equipo para crecer juntos, valoramos el respeto en cada interacción y actuamos con integridad, manteniendo siempre la honestidad y la transparencia."
         title="Valores"
+        class="rounded-2xl shadow-lg border border-gray-200/40 dark:border-gray-700/40 hover:shadow-xl hover:-translate-y-1 transition-transform duration-300"
       >
-        <span slot="icon" class="animate-pulse">
+        <span
+          slot="icon"
+          class="animate-pulse text-emerald-600 dark:text-emerald-400"
+        >
           <svg
             width="30"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="w-4 h-4 sm:w-5 sm:h-5"
+            class="w-5 h-5"
           >
             <path
               stroke-linecap="round"
@@ -95,4 +121,138 @@ import Fade from "@/components/fadeUp/Fade.astro";
       </Info>
     </div>
   </Fade>
+</section>
+
+<!-- Sección Producción -->
+<section class="py-18">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Encabezado -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r text-white">
+        Nuestra Producción
+      </h2>
+      <p class="mt-4 text-gray-600 dark:text-gray-300">
+        Calidad, tradición y crecimiento constante en cítricos y nuez pecán.
+      </p>
+    </div>
+
+    <!-- Datos Generales -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      <div
+        class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200/40 dark:border-gray-700/40 hover:shadow-xl hover:-translate-y-1 transition-transform duration-300"
+      >
+        <p class="text-4xl">🍋</p>
+        <h3
+          class="mt-4 text-lg font-semibold bg-gradient-to-r text-white bg-clip-text text-transparent"
+        >
+          Producción de Limones
+        </h3>
+        <p class="text-gray-600 dark:text-gray-300">7.000 toneladas anuales</p>
+      </div>
+
+      <div
+        class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200/40 dark:border-gray-700/40 hover:shadow-xl hover:-translate-y-1 transition-transform duration-300"
+      >
+        <p class="text-4xl">🌰</p>
+        <h3
+          class="mt-4 text-lg font-semibold bg-gradient-to-r text-white bg-clip-text text-transparent"
+        >
+          Nuez Pecán
+        </h3>
+        <p class="text-gray-600 dark:text-gray-300">
+          32 hectáreas en producción
+        </p>
+      </div>
+
+      <div
+        class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200/40 dark:border-gray-700/40 hover:shadow-xl hover:-translate-y-1 transition-transform duration-300"
+      >
+        <p class="text-4xl">🏭</p>
+        <h3
+          class="mt-4 text-lg font-semibold bg-gradient-to-r text-white bg-clip-text text-transparent"
+        >
+          Depósito
+        </h3>
+        <p class="text-gray-600 dark:text-gray-300">6.500 m²</p>
+      </div>
+
+      <div
+        class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200/40 dark:border-gray-700/40 hover:shadow-xl hover:-translate-y-1 transition-transform duration-300"
+      >
+        <p class="text-4xl">🌱</p>
+        <h3
+          class="mt-4 text-lg font-semibold bg-gradient-to-r text-white bg-clip-text text-transparent"
+        >
+          Fincas de Limón
+        </h3>
+        <p class="text-gray-600 dark:text-gray-300">
+          307 hectáreas (286 productivas)
+        </p>
+      </div>
+    </div>
+
+    <!-- Nuestras Fincas -->
+    <div>
+      <h3
+        class="text-2xl font-bold text-center mb-8 bg-gradient-to-r text-white bg-clip-text text-transparent"
+      >
+        Nuestras Fincas
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Finca Sauce Huascho -->
+        <div
+          class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200/40 dark:border-gray-700/40 hover:shadow-xl hover:-translate-y-1 transition-transform duration-300"
+        >
+          <h4 class="text-xl font-semibold text-white mb-3">
+            Finca Sauce Huascho
+          </h4>
+          <p class="text-gray-600 dark:text-gray-300 mb-2">
+            Famaillá – Pedemonte Tucumano
+          </p>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2 text-sm">
+            <li>🌿 Superficie productiva: <strong>186 has</strong></li>
+            <li>✔️ Más de 4 años: <strong>96 has</strong></li>
+            <li>🌱 Menos de 4 años: <strong>90 has</strong></li>
+            <li>📈 Nuevas plantaciones: <strong>2023 y 2024</strong></li>
+          </ul>
+        </div>
+
+        <!-- Finca El Sacrificio -->
+        <div
+          class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200/40 dark:border-gray-700/40 hover:shadow-xl hover:-translate-y-1 transition-transform duration-300"
+        >
+          <h4 class="text-xl font-semibold text-white mb-3">
+            Finca El Sacrificio
+          </h4>
+          <p class="text-gray-600 dark:text-gray-300 mb-2">
+            Viejo Ingenio La Invernada – Alberdi
+          </p>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2 text-sm">
+            <li>🌿 Superficie productiva: <strong>100 has</strong></li>
+            <li>✔️ Más de 4 años: <strong>56 has</strong></li>
+            <li>🌱 Menos de 4 años: <strong>44 has</strong></li>
+          </ul>
+        </div>
+
+        <!-- Finca Mesas -->
+        <div
+          class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200/40 dark:border-gray-700/40 hover:shadow-xl hover:-translate-y-1 transition-transform duration-300"
+        >
+          <h4 class="text-xl font-semibold text-white mb-3">Finca Mesas</h4>
+          <p class="text-gray-600 dark:text-gray-300 mb-2">
+            Producción de Nuez Pecán
+          </p>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2 text-sm">
+            <li>🌱 Plantación 2020: <strong>10 has</strong></li>
+            <li>🌱 Plantación 2021: <strong>5 has</strong></li>
+            <li>🌱 Plantación 2022: <strong>17 has</strong></li>
+            <li>📌 Producción actual: <strong>32,2 has</strong></li>
+            <li>🚀 Proyección futura: <strong>78 has (46 nuevas)</strong></li>
+            <li>⚖️ Rendimiento: <strong>3.210 – 3.345 kg/ha</strong></li>
+            <li>💲 Precio estimado: <strong>USD 2,9/kg</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

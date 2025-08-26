@@ -7,7 +7,8 @@ const services = [
   },
   {
     title: "Certificaciones",
-    description: "Contamos con certificaciones Global GAP, SMETA y Fairtrade.",
+    description:
+      "Contamos con certificaciones Global G.A.P, HACCP, SMETA, Fairtrade y Primus.",
     icon: `
 <svg fill="currentColor" class="animate-pulse" width="34px" height="34px" viewBox="0 0 64 64">
 <g data-name="17 quality" id="_17_quality">
@@ -65,7 +66,7 @@ const services = [
   {
     title: "Exportación",
     description:
-      "Llevamos nuestra fruta a los principales mercados del mundo, cumpliendo con exigentes estándares internacionales de calidad, trazabilidad y sostenibilidad.",
+      "Llevamos nuestra fruta a los principales mercados del mundo: Europa, Rusia, China y Estados Unidos. También hemos crecido en América Latina (Brasil, Paraguay y Panamá)",
     icon: `<?xml version="1.0" encoding="utf-8"?>
 
 <svg width="34px"  height="34px" viewBox="0 0 64 64" aria-hidden="true" role="img" class="animate-pulse" preserveAspectRatio="xMidYMid meet">
